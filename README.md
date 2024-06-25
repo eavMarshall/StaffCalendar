@@ -11,8 +11,8 @@ Runs on node 18 and uses Zustand
 ## Data structure
 - Calendar
   - selectedDate
-  - Staff: array
-    - Staff
+  - Data: array
+    - Data
       - id
       - name
   - Appointments: array
