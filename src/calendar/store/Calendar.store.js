@@ -1,25 +1,29 @@
 import { create } from 'zustand';
 import {Staff} from "./Data/Staff";
 
-
 export const CalendarStore = create((set, getState) => ({
 
-    staff: [],
+    allStaff: [],
     /**
-     * @param {Array.<Staff>} staff
+     * @param {Array.<Staff>} allStaff
      */
-    setStaff: (staff) => set(() => {
-        if (!Array.isArray(staff)) {
-            throw new Error('Must be an array');
-        }
-        for (let i in staff) {
-            if (!(staff[i] instanceof Staff)) {
-                throw new Error('Staff must be of type Staff');
-            }
-        }
-
-        return {staff};
+    setAllStaff: (allStaff) => set(() => {
+        return {allStaff: convertStaffArrayToMap(allStaff)};
     }),
 }));
 
 export const getState = () => CalendarStore.getState();
+
+export const convertStaffArrayToMap = (allStaff) => {
+    const staff = {};
+    if (!Array.isArray(allStaff)) {
+        throw new Error('Must be an array');
+    }
+    for (let i in allStaff) {
+        if (!(allStaff[i] instanceof Staff)) {
+            throw new Error('Staff must be of type Staff');
+        }
+        staff[allStaff[i].id] = allStaff[i];
+    }
+    return staff;
+};

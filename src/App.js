@@ -3,7 +3,7 @@ import Calendar from "./calendar/Calendar";
 import {getState} from "./calendar/store/Calendar.store";
 import {Staff} from "./calendar/store/Data/Staff";
 
-getState().setStaff([
+getState().setAllStaff([
     new Staff(1, 1, 'Staff 1'),
     new Staff(2, 1, 'Staff 2'),
     new Staff(3, 1, 'Staff 3'),

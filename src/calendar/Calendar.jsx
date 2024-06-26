@@ -1,14 +1,17 @@
-import './Calendar.css';
+import styles from './Calendar.module.scss';
 import {CalendarStore} from "./store/Calendar.store";
 
 function Calendar() {
-    const allStaff = CalendarStore((state) => state.staff);
-    console.log(allStaff)
+    const allStaff = CalendarStore((state) => state.allStaff);
     return (
         <div className="Calendar">
-            {allStaff.map((staff) => {
-                return <div>{staff.name}</div>;
+            <div className={styles.header}>
+            {Object.keys(allStaff).map((id) => {
+                const staff = allStaff[id];
+                return <div key={`Staff-${id}`}>{staff.name}</div>;
             })}
+            </div>
+
         </div>
     );
 }
