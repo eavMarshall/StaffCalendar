@@ -1,0 +1,43 @@
+
+.calendar {
+  .table-container {
+    overflow-y: auto;
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+
+  thead, tbody {
+    display: block;
+  }
+
+  thead {
+    position: sticky;
+    top: 0;
+    background-color: #f2f2f2;
+  }
+
+  tbody {
+    max-height: 240px;
+    overflow-y: scroll;
+  }
+
+  td, th {
+    padding: 8px;
+    border: 1px solid #ddd;
+    white-space: nowrap;
+  }
+
+  td:first-child, th:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background-color: #fff;
+  }
+
+  th:first-child {
+    z-index: 2;
+  }
+
+}

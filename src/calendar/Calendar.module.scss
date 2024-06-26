@@ -1,4 +1,19 @@
 
 .header {
-  background-color: red;
+  min-width: 200px;
+}
+
+.timeColumn {
+  width: 40px;
+}
+
+.timeHeight {
+  height: 20px;
+}
+
+.pageWrapper {
+  height: 500px;
+  width: 500px;
+  overflow: auto;
+  margin: 50px;
 }
